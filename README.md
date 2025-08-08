@@ -29,16 +29,13 @@ source("source/dcpossum_unc.R")
 source("source/func_pred_laplace_temp.R")
 source("source/dcpossum_clust.R")
 ```
-In this first step we estimate the density using DPM models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We adopt the default parameter specifications provided by the package. We then
-generate a sequence of GMM summary estimates. The maximum number of components of the GMM summaries is defined as
-$K^{\text{max}}$, where $\boldsymbol{\hat{\gamma}}^k$ are the parameters of the summary. The summary estimate is obtained by minizing 
+In this first step, we estimate the density using Dirichlet Process Mixture (DPM) models, implemented via the [`dirichletprocess`](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf) package. We adopt the default parameter specifications provided by the package. We then generate a sequence of Gaussian Mixture Model (GMM) summary estimates. The maximum number of components in the GMM summaries is defined as $K^{\text{max}}$, where $\boldsymbol{\hat{\gamma}}^k$ denotes the parameters of the summary. Each summary estimate is obtained by minimizing the expected loss:
 
 $$
-\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_{n}\mid \boldsymbol{y}} \left[ {L}(\tilde{f},g_{\boldsymbol{\gamma}})  \right], \quad \text{for}\quad k = 1,\dots,K_{\text{max}}.
+\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_n \mid \boldsymbol{y}} \left[ L(\tilde{f}, g_{\boldsymbol{\gamma}}) \right], \quad \text{for} \quad k = 1, \dots, K^{\text{max}}.
 $$
 
 
-The 
 
 ```R
 DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
