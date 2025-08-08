@@ -1,4 +1,4 @@
-## Repository for density and cluster summaries for Bayesian models
+## Repository for density and cluster summaries for overparameterized Bayesian models
 
 This repository is associated with the paper *“Lower-dimensional
 posterior density and cluster summaries for overparameterized Bayesian
@@ -15,7 +15,7 @@ For the remaining numerical examples contained in the paper, you can download th
 
 ------------------------
 
-In this first example we apply our method to analyze the galaxy data. galaxy data comprising of 82 galaxy velocities, measured in 103 kilometers per second diverging from our own, sampled from the Corona Borealis (see Roeder, 1990).
+In this first example we apply our method to analyze the galaxy data. galaxy data comprising of 82 galaxy velocities, measured in 103 kilometers per second diverging from our own, sampled from the Corona Borealis [(see Roeder, 1990)](https://www.jstor.org/stable/2289993?seq=1).
 
 ```R
 # Loading the data
