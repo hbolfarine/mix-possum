@@ -401,8 +401,12 @@ summary estimates. The maximum number of components in the GMM summaries
 is defined as <span class="math inline">\(K^{\text{max}}\)</span>, where
 <span class="math inline">\(\boldsymbol{\hat{\gamma}}^k\)</span> denotes
 the parameters of the summary. Each summary estimate is obtained by
-minimizing the expected loss: <span class="math inline">\(\boldsymbol{\hat{\gamma}}^k :=
-\arg\min_{\boldsymbol{\gamma}^k\)</span>.</p>
+minimizing the expected loss:</p>
+<p><span class="math display">\[\boldsymbol{\hat{\gamma}}^k :=
+\arg\min_{\boldsymbol{\gamma}^k \in
+\boldsymbol{\Gamma}^k}\mathbb{E}_{\boldsymbol{\tilde{y}}_n \mid
+\boldsymbol{y}} \left[ L(\widetilde{f}, g_{\boldsymbol{\gamma}})
+\right]\]</span>.</p>
 <pre class="r"><code>DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
                               k0 = 1/10, pred.f = TRUE)</code></pre>
 <p>The posterior distribution on the number of components or groups for
