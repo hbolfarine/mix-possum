@@ -352,26 +352,33 @@ display: none;
 </div>
 
 
-<div id="repository-for-density-and-cluster-summaries-for-bayesian-models" class="section level2">
-<h2>Repository for density and cluster summaries for Bayesian
-models</h2>
-<p>This repository is associated with the paper <em>“Lower-dimensional
-posterior density and cluster summaries for overparameterized Bayesian
-models,”</em> see <a href="https://arxiv.org/abs/2506.09850">arXiv</a>,
-and provides codes and tutorials on one of the numerical examples.</p>
-<p>This tutorial contains <code>R</code> code to perform the analysis of
-the simple example. Here, we present the three-step procedure of our
-method. We recommend executing the code below in the order in which it
-is presented, but changes can be made in the solution path length and in
-the size of the credible interval of the posterior summary.</p>
+<div id="repository-for-density-and-cluster-summaries-for-overparameterized-bayesian-models" class="section level2">
+<h2>Repository for density and cluster summaries for overparameterized
+Bayesian models</h2>
+<p>This repository supplements the paper “Lower-dimensional Posterior
+Density and Cluster Summaries for Overparameterized Bayesian Models” (<a href="https://arxiv.org/abs/2506.09850">arXiv:2506.09850</a>). It
+contains the code and a tutorial corresponding to one of the numerical
+examples presented in the manuscript. The tutorial includes
+<code>R</code> code for replicating the analysis of a simple
+illustrative example. We outline the three-step procedure underlying our
+proposed method and recommend that the code be executed in the order
+provided. However, users may adjust parameters such as the solution path
+length and the width of the credible intervals in the posterior
+summaries as needed.</p>
+<p>Additional scripts for reproducing the remaining numerical examples
+in the paper are available via the following Dropbox link.</p>
 <hr />
-<p>We apply our method to analyze the galaxy data.</p>
+<p>In the first example, we apply our methodology to the analysis of the
+galaxy dataset, which consists of the velocities (in <span class="math inline">\(10^3\)</span> km/s) of 82 galaxies receding from
+our own. These galaxies were sampled from the Corona Borealis region;
+for further details, see <a href="https://www.jstor.org/stable/2289993?seq=1">(see Roeder,
+1990)</a>.</p>
 <pre class="r"><code># Loading the data
 y.data.app = data_sim_func(&quot;galaxy&quot;)
 set.seed(1800) </code></pre>
 <div id="run-the-method" class="section level3">
 <h3>1. Run the method</h3>
-<p>z` Necessary files:</p>
+<p>Necessary files:</p>
 <pre class="r"><code>source(&quot;source/dcpossum_dens_comp.R&quot;)
 source(&quot;source/dcpossum_sim_data_mix.R&quot;)
 source(&quot;source/dcpossum_plots.R&quot;)

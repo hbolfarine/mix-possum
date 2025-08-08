@@ -15,9 +15,10 @@ y.data.app = data_sim_func("galaxy")
 set.seed(1800) 
 ```
 ### 1. Run the method
-z`
+
 Necessary files:
 ```R
+# Loading necessary files
 source("source/dcpossum_dens_comp.R")
 source("source/dcpossum_sim_data_mix.R")
 source("source/dcpossum_plots.R")
@@ -25,9 +26,8 @@ source("source/dcpossum_unc.R")
 source("source/func_pred_laplace_temp.R")
 source("source/dcpossum_clust.R")
 ```
-
 In this first step we estimate the density using Dirichlet process
-mixture models, using the `dirichletprocess` [package](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf). We then
+mixture models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We then
 generate a sequence of Gaussian mixture model (GMM) summary estimates.
 The maximum number of components of the GMM summaries is defined as
 *K*<sub>max</sub> = 10.
