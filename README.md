@@ -41,8 +41,9 @@ DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000,
 ### 2. Discrepancy function
 
 Below is the discrepancy function plot indicating that a GMM summary
-with four components provides a good approximation to the predictive
-distribution of the original model under a Kullback-Leibler divergence (KL), $\text{KL}(f \| g) = \int f \log \left( \frac{f}{g} \right) dy$.
+with four components provides a good approximation to the predictive distribution of the original model under a Kullback-Leibler divergence (KL) as
+
+$$d_{n}^k(\tilde{f}, \hat{g}_{\boldsymbol{\gamma}}^k) = \log \frac{\hat{g}_{\boldsymbol{\gamma}}^k(\boldsymbol{\tilde{y}}_n)}{\tilde{f}(\boldsymbol{\tilde{y}}_n)}, \quad k = 1, \dots, K_{\max}, \quad n = 1,\dots, \tilde{N}.$$
 
 ```R
 DPM_comp_galaxy = plot.possum.uni(DPM.galaxy[[1]], kmax = 10, sel.K = FALSE, 
