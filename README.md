@@ -37,11 +37,7 @@ $$\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol
 DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
                               k0 = 1/10, pred.f = TRUE)
 ```
-The posterior distribution on the number of components or groups for the
-Dirichlet process is given in the plot below:
-```R
-comp_DPM = plot_posterior_components(table(DPM.galaxy[[3]]))
-```
+
 ### 2. Discrepancy function
 
 Below is the discrepancy function plot indicating that a GMM summary
