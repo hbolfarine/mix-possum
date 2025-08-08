@@ -1,11 +1,9 @@
 ## Repository for density and cluster summaries for overparameterized Bayesian models
 
-In this paper, we propose a novel method that integrates these two approaches by projecting
-the fit of a flexible, over-parameterized model onto a lower-dimensional parametric
-summary, which serves as a surrogate. This process increases interpretability while
-preserving most of the fit of the original model.
+This repository supplements the paper “Lower-dimensional Posterior Density and Cluster Summaries for Overparameterized Bayesian Models” ([arXiv:2506.09850](https://arxiv.org/abs/2506.09850)). In this paper, we introduce a novel methodology that integrates flexible nonparametric modeling with parametric 
+summarization. Specifically, we project the fit obtained from an overparameterized model—such as the Dirichlet Process Mixture Model (DPMM)—onto a lower-dimensional parametric surrogate, exemplified by the Gaussian Mixture Model (GMM). This projection enhances interpretability while retaining the essential characteristics of the original model's fit.
 
-This repository supplements the paper “Lower-dimensional Posterior Density and Cluster Summaries for Overparameterized Bayesian Models” ([arXiv:2506.09850](https://arxiv.org/abs/2506.09850)). It contains the code and a tutorial corresponding to one of the numerical examples presented in the manuscript.
+This repository contains the code and a tutorial corresponding to one of the numerical examples presented in the paper.
 The tutorial includes `R` code for replicating the analysis of a simple illustrative example. We outline the three-step procedure underlying our proposed method and recommend that the code be executed in the order provided. However, users may adjust parameters such as the solution path length and the width of the credible intervals in the posterior summaries as needed.
 
 Additional scripts for reproducing the remaining numerical examples in the paper are available via the following Dropbox link.
@@ -33,7 +31,7 @@ source("source/dcpossum_clust.R")
 ```
 In this first step we estimate the density using Dirichlet process
 mixture models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We then
-generate a sequence of Gaussian mixture model (GMM) summary estimates.
+generate a sequence of  (GMM) summary estimates.
 The maximum number of components of the GMM summaries is defined as
 *K*<sub>max</sub> = 10.
 ```R
