@@ -1,19 +1,13 @@
 ## Repository for density and cluster summaries for overparameterized Bayesian models
 
-This repository is associated with the paper *“Lower-dimensional posterior density and cluster summaries for overparameterized Bayesian models,”* 
-see [arXiv](https://arxiv.org/abs/2506.09850). It provides codes and a tutorial on one of the numerical examples contained in the paper.
+This repository supplements the paper “Lower-dimensional Posterior Density and Cluster Summaries for Overparameterized Bayesian Models” ([arXiv:2506.09850](https://arxiv.org/abs/2506.09850)). It contains the code and a tutorial corresponding to one of the numerical examples presented in the manuscript.
+The tutorial includes `R` code for replicating the analysis of a simple illustrative example. We outline the three-step procedure underlying our proposed method and recommend that the code be executed in the order provided. However, users may adjust parameters such as the solution path length and the width of the credible intervals in the posterior summaries as needed.
 
-This tutorial contains `R` code to perform the analysis of the simple
-example. Here, we present the three-step procedure of our method. We
-recommend executing the code below in the order in which it is
-presented, but changes can be made in the solution path length and in
-the size of the credible interval of the posterior summary.
-
-For the remaining numerical examples contained in the paper, you can download the scripts on this Dropbox link.
+Additional scripts for reproducing the remaining numerical examples in the paper are available via the following Dropbox link.
 
 ------------------------
 
-In this first example we apply our method to analyze the galaxy data. galaxy data comprising of 82 galaxy velocities, measured in 103 kilometers per second diverging from our own, sampled from the Corona Borealis [(see Roeder, 1990)](https://www.jstor.org/stable/2289993?seq=1).
+In the first example, we apply our methodology to the analysis of the galaxy dataset, which consists of the radial velocities (in units of 10³ km/s) of 82 galaxies receding from the Milky Way. These galaxies were sampled from the Corona Borealis region; for further details, see [(see Roeder, 1990)](https://www.jstor.org/stable/2289993?seq=1).
 
 ```R
 # Loading the data
