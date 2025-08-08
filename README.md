@@ -33,9 +33,9 @@ In this first step we estimate the density using DPM models, using the `dirichle
 generate a sequence of GMM summary estimates. The maximum number of components of the GMM summaries is defined as
 $K^{\text{max}}$, where $\boldsymbol{\hat{\gamma}}^k$ are the parameters of the summary. The summary estimate is obtained by minizing 
 
-\begin{equation}
-	\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_{n}\mid \boldsymbol{y}} \left[ {L}(\tilde{f},g_{\boldsymbol{\gamma}})  \right], \quad \text{for}\quad k = 1,\dots,K_{\text{max}}.
-\end{equation}
+$$
+\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_{n}\mid \boldsymbol{y}} \left[ {L}(\tilde{f},g_{\boldsymbol{\gamma}})  \right], \quad \text{for}\quad k = 1,\dots,K_{\text{max}}.
+$$
 
 
 The 
