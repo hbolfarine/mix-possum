@@ -30,7 +30,7 @@ source("source/func_pred_laplace_temp.R")
 source("source/dcpossum_clust.R")
 ```
 In this first step, we estimate the density using Dirichlet Process Mixture (DPM) models, implemented via the [`dirichletprocess`](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf) package. We adopt the default parameter specifications provided by the package. We then generate a sequence of Gaussian Mixture Model (GMM) summary estimates. The maximum number of components in the GMM summaries is defined as $K^{\text{max}}$, where $\boldsymbol{\hat{\gamma}}^k$ denotes the parameters of the summary. Each summary estimate is obtained by minimizing the expected loss:
-$\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k$.
+$\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}}^k$.
 
 ```R
 DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
