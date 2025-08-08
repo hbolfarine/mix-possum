@@ -356,9 +356,16 @@ display: none;
 <h2>Repository for density and cluster summaries for overparameterized
 Bayesian models</h2>
 <p>This repository supplements the paper “Lower-dimensional Posterior
-Density and Cluster Summaries for Overparameterized Bayesian Models” (<a href="https://arxiv.org/abs/2506.09850">arXiv:2506.09850</a>). It
-contains the code and a tutorial corresponding to one of the numerical
-examples presented in the manuscript. The tutorial includes
+Density and Cluster Summaries for Overparameterized Bayesian Models” (<a href="https://arxiv.org/abs/2506.09850">arXiv:2506.09850</a>). In this
+paper, we introduce a novel methodology that integrates flexible
+nonparametric modeling with parametric summarization. Specifically, we
+project the fit obtained from an overparameterized models, such as the
+Dirichlet Process Mixture Model (DPM) onto a lower-dimensional
+parametric surrogate, exemplified by the Gaussian Mixture Model (GMM).
+This projection improves interpretability while retaining the essential
+characteristics of the original model’s fit.</p>
+<p>This repository contains the code and a tutorial corresponding to one
+of the numerical examples presented in the paper. The tutorial includes
 <code>R</code> code for replicating the analysis of a simple
 illustrative example. We outline the three-step procedure underlying our
 proposed method and recommend that the code be executed in the order
@@ -379,17 +386,26 @@ set.seed(1800) </code></pre>
 <div id="run-the-method" class="section level3">
 <h3>1. Run the method</h3>
 <p>Necessary files:</p>
-<pre class="r"><code>source(&quot;source/dcpossum_dens_comp.R&quot;)
+<pre class="r"><code># Loading necessary files
+source(&quot;source/dcpossum_dens_comp.R&quot;)
 source(&quot;source/dcpossum_sim_data_mix.R&quot;)
 source(&quot;source/dcpossum_plots.R&quot;)
 source(&quot;source/dcpossum_unc.R&quot;)
 source(&quot;source/func_pred_laplace_temp.R&quot;)
 source(&quot;source/dcpossum_clust.R&quot;)</code></pre>
 <p>In this first step we estimate the density using Dirichlet process
-mixture models, using the <code>dirichletprocess</code> <a href="https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf">package</a>.
-We then generate a sequence of Gaussian mixture model (GMM) summary
-estimates. The maximum number of components of the GMM summaries is
-defined as <em>K</em><sub>max</sub> = 10.</p>
+mixture models, using the <code>dirichletprocess</code> package (see <a href="https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf">dirichletprocess.pdf</a>).
+We adopt the default parameter specifications provided by the package.
+We then generate a sequence of GMM summary estimates. The maximum number
+of components of the GMM summaries is defined as
+<em>K</em><sub>max</sub> = 10, where <span class="math display">\[
+\begin{equation} \label{eq:min1}
+    \boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in
+\boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_{n}\mid
+\boldsymbol{y}} \left[ {L}(\tilde{f},g_{\boldsymbol{\gamma}})  \right],
+\quad \text{for}\quad k = 1,\dots,K_{\text{max}}.
+\end{equation}
+\]</span></p>
 <pre class="r"><code>DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
                               k0 = 1/10, pred.f = TRUE)</code></pre>
 <p>The posterior distribution on the number of components or groups for
@@ -400,7 +416,9 @@ the Dirichlet process is given in the plot below:</p>
 <h3>2. Discrepancy function</h3>
 <p>Below is the discrepancy function plot indicating that a GMM summary
 with four components provides a good approximation to the predictive
-distribution of the original model under a KL divergence.</p>
+distribution of the original model under a Kullback-Leibler divergence
+(KL), <span class="math inline">\(\text{KL}(f \| g) = \int f \log \left(
+\frac{f}{g} \right) dy\)</span>.</p>
 <pre class="r"><code>DPM_comp_galaxy = plot.possum.uni(DPM.galaxy[[1]], kmax = 10, sel.K = FALSE, 
                                   y.lim = c(-1.1,0.4))
 DPM_comp_galaxy</code></pre>

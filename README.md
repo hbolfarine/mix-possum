@@ -29,10 +29,17 @@ source("source/dcpossum_unc.R")
 source("source/func_pred_laplace_temp.R")
 source("source/dcpossum_clust.R")
 ```
-In this first step we estimate the density using Dirichlet process
-mixture models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We adopt the default parameter specifications provided by the package. We then
-generate a sequence of (GMM) summary estimates. The maximum number of components of the GMM summaries is defined as
-*K*<sub>max</sub> = 10.
+In this first step we estimate the density using DPM models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We adopt the default parameter specifications provided by the package. We then
+generate a sequence of GMM summary estimates. The maximum number of components of the GMM summaries is defined as
+$K^{\text{max}}$, where $\boldsymbol{\hat{\gamma}}^k$ are the parameters of the summary. The summary estimate is obtained by minizing 
+$$
+\begin{equation} \label{eq:min1}
+	\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k} \mathbb{E}_{\boldsymbol{\tilde{y}}_{n}\mid \boldsymbol{y}} \left[ {L}(\tilde{f},g_{\boldsymbol{\gamma}})  \right], \quad \text{for}\quad k = 1,\dots,K_{\text{max}}.
+\end{equation}
+$$
+
+The 
+
 ```R
 DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
                               k0 = 1/10, pred.f = TRUE)
@@ -46,7 +53,8 @@ comp_DPM = plot_posterior_components(table(DPM.galaxy[[3]]))
 
 Below is the discrepancy function plot indicating that a GMM summary
 with four components provides a good approximation to the predictive
-distribution of the original model under a KL divergence.
+distribution of the original model under a Kullback-Leibler divergence (KL), $\text{KL}(f \| g) = \int f \log \left( \frac{f}{g} \right) dy$.
+
 ```R
 DPM_comp_galaxy = plot.possum.uni(DPM.galaxy[[1]], kmax = 10, sel.K = FALSE, 
                                   y.lim = c(-1.1,0.4))
