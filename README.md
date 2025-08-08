@@ -1,9 +1,7 @@
 ## Repository for density and cluster summaries for overparameterized Bayesian models
 
-This repository is associated with the paper *“Lower-dimensional
-posterior density and cluster summaries for overparameterized Bayesian
-models,”* see [arXiv](https://arxiv.org/abs/2506.09850), and provides codes and tutorials on one of the
-numerical examples.
+This repository is associated with the paper *“Lower-dimensional posterior density and cluster summaries for overparameterized Bayesian models,”* 
+see [arXiv](https://arxiv.org/abs/2506.09850). It provides codes and a tutorial on one of the numerical examples contained in the paper.
 
 This tutorial contains `R` code to perform the analysis of the simple
 example. Here, we present the three-step procedure of our method. We
