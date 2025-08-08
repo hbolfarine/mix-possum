@@ -11,9 +11,11 @@ recommend executing the code below in the order in which it is
 presented, but changes can be made in the solution path length and in
 the size of the credible interval of the posterior summary.
 
+For the remaining numerical examples contained in the paper, you can download the scripts on this Dropbox link.
+
 ------------------------
 
-We apply our method to analyze the galaxy data.
+In this first example we apply our method to analyze the galaxy data. galaxy data comprising of 82 galaxy velocities, measured in 103 kilometers per second diverging from our own, sampled from the Corona Borealis (see Roeder, 1990).
 
 ```R
 # Loading the data
