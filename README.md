@@ -45,6 +45,8 @@ with four components provides a good approximation to the predictive distributio
 
 $d_{n}^k(\tilde{f}, \hat{g}_{\boldsymbol{\gamma}}^k) = \log \frac{\hat{g}(\boldsymbol{\tilde{y}}_n)}{\tilde{f}(\boldsymbol{\tilde{y}}_n)}$, where .
 
+$k = 1, \dots, K_{\text{max}}$, and  $n = 1,\dots, \tilde{N}$
+
 ```R
 DPM_comp_galaxy = plot.possum.uni(DPM.galaxy[[1]], kmax = 10, sel.K = FALSE, 
                                   y.lim = c(-1.1,0.4))
