@@ -43,7 +43,7 @@ DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000,
 Below is the discrepancy function plot indicating that a GMM summary
 with four components provides a good approximation to the predictive distribution of the original model under a Kullback-Leibler divergence (KL) as
 
-$d_{n}^k(\tilde{f}, \hat{g}_{\boldsymbol{\gamma}}^k) = \log \frac{\hat{g}(\boldsymbol{\tilde{y}}_n)}{\tilde{f}(\boldsymbol{\tilde{y}}_n)}$, where .
+$d_{n}^k(\tilde{f}, \hat{g}_{\boldsymbol{\gamma}}^k) = \log \frac{\hat{g}(\boldsymbol{\tilde{y}}_n)}{\tilde{f}(\boldsymbol{\tilde{y}}_n)}$, where
 
 $k = 1, \dots, K_{\text{max}}$, and $n = 1,\dots, \tilde{N}$
 
