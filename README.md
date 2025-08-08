@@ -30,9 +30,8 @@ source("source/func_pred_laplace_temp.R")
 source("source/dcpossum_clust.R")
 ```
 In this first step we estimate the density using Dirichlet process
-mixture models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We then
-generate a sequence of  (GMM) summary estimates.
-The maximum number of components of the GMM summaries is defined as
+mixture models, using the `dirichletprocess` package (see [dirichletprocess.pdf](https://cran.r-project.org/web/packages/dirichletprocess/vignettes/dirichletprocess.pdf)). We adopt the default parameter specifications provided by the package. We then
+generate a sequence of (GMM) summary estimates. The maximum number of components of the GMM summaries is defined as
 *K*<sub>max</sub> = 10.
 ```R
 DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
@@ -84,8 +83,7 @@ plots.possum.exemp.DPM$dens.summ
 
 ### 4. Posterior cluster summaries plot
 
-In the plot below we display the cluster allocation estimate and
-posterior summary cluster allocation.
+In the plot below we display the cluster allocation estimate and posterior summary cluster allocation.
 
 ```R
 possum_clust = dc.possum.clust.uni(DPM.galaxy, y.data.app, K.sel = K_star, km = TRUE)
