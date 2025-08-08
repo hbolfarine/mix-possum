@@ -404,7 +404,7 @@ the parameters of the summary. Each summary estimate is obtained by
 minimizing the expected loss:</p>
 <p><span class="math display">\[\boldsymbol{\hat{\gamma}}^k :=
 \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k}L(\tilde{f},
-g_{\boldsymbol{\gamma}}) \text{for} \quad k = 1, \dots,
+g_{\boldsymbol{\gamma}})\quad \text{for} \quad k = 1, \dots,
 K^{\text{max}}\]</span>.</p>
 <pre class="r"><code>DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
                               k0 = 1/10, pred.f = TRUE)</code></pre>
