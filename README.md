@@ -7,7 +7,7 @@ Additional scripts for reproducing the remaining numerical examples in the paper
 
 ------------------------
 
-In the first example, we apply our methodology to the analysis of the galaxy dataset, which consists of the radial velocities (in units of 10³ km/s) of 82 galaxies receding from the Milky Way. These galaxies were sampled from the Corona Borealis region; for further details, see [(see Roeder, 1990)](https://www.jstor.org/stable/2289993?seq=1).
+In the first example, we apply our methodology to the analysis of the galaxy dataset, which consists of the velocities (in $10^3$ km/s) of 82 galaxies receding from our own. These galaxies were sampled from the Corona Borealis region; for further details, see [(see Roeder, 1990)](https://www.jstor.org/stable/2289993?seq=1).
 
 ```R
 # Loading the data
