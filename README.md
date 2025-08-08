@@ -1,7 +1,7 @@
 ## Repository for density and cluster summaries for overparameterized Bayesian models
 
 This repository supplements the paper “Lower-dimensional Posterior Density and Cluster Summaries for Overparameterized Bayesian Models” ([arXiv:2506.09850](https://arxiv.org/abs/2506.09850)). In this paper, we introduce a novel methodology that integrates flexible nonparametric modeling with parametric 
-summarization. Specifically, we project the fit obtained from an overparameterized model—such as the Dirichlet Process Mixture Model (DPM) onto a lower-dimensional parametric surrogate, exemplified by the Gaussian Mixture Model (GMM). This projection enhances interpretability while retaining the essential characteristics of the original model's fit.
+summarization. Specifically, we project the fit obtained from an overparameterized models, such as the Dirichlet Process Mixture Model (DPM) onto a lower-dimensional parametric surrogate, exemplified by the Gaussian Mixture Model (GMM). This projection improves interpretability while retaining the essential characteristics of the original model's fit.
 
 This repository contains the code and a tutorial corresponding to one of the numerical examples presented in the paper.
 The tutorial includes `R` code for replicating the analysis of a simple illustrative example. We outline the three-step procedure underlying our proposed method and recommend that the code be executed in the order provided. However, users may adjust parameters such as the solution path length and the width of the credible intervals in the posterior summaries as needed.
