@@ -105,3 +105,6 @@ p.legend <- ggdraw() +
 p.legend
 ```
 <img src="figure-markdown_strict/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+
+In this second example we apply our method on multivariate data. We first fit a multivariate model using the Dirichlet Process Mixture (DPM) model. We then Proceed to apply the posterior summarization process.
+
