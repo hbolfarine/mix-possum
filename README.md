@@ -34,8 +34,7 @@ In this first step, we estimate the density using Dirichlet Process Mixture (DPM
 $$\boldsymbol{\hat{\gamma}}^k := \arg\min_{\boldsymbol{\gamma}^k \in \boldsymbol{\Gamma}^k}L(\tilde{f}, g_{\boldsymbol{\gamma}}),\quad \text{for} \quad k = 1, \dots, K^{\text{max}}$$, where $\tilde{f}$ is the predictive density of the DPM modelm, and $g_{\boldsymbol{\gamma}}$ is the GMM summary.
 
 ```R
-DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, 
-                              k0 = 1/10, pred.f = TRUE)
+DPM.galaxy = dcpossum.DPM.dir(y.data.app, kmax = 10, quant.sample = 1000, k0 = 1/10, pred.f = TRUE)
 ```
 
 ### 2. Discrepancy function
